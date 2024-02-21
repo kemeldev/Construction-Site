@@ -1,0 +1,59 @@
+.hero_mainContainer {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  color: #ffff;
+}
+
+.hero_presentation {
+  width: 70%;
+  border: red solid 1px;
+}
+
+.hero_services {
+  width: 30%;
+  background-color: #FFB400;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.hero_services_all {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  padding: 1.5rem 0 1.5rem 0;
+
+}
+
+.hero_services_each {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  height: 60px;
+  padding-left: 20px;
+  padding-right: 30px;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+
+.hero_services_each img {
+  position: absolute;
+  left: 20px;
+}
+
+.hero_services_each small {
+  position: absolute;
+  left: 100px;
+}
+
+
+
+.hero_services_each h3,
+p {
+  margin: 0;
+}
