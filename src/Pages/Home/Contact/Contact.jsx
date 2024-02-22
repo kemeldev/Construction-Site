@@ -87,7 +87,7 @@ export function Contact () {
 
         <div className='contact_information'>
           <h3>Información de contacto</h3>
-          <h5>Cuentanos algo</h5>
+          <h5>¿ Cómo puedo ayudar ?</h5>
           <div className='contact_information_data'>
             <img src={phone} alt="phone icon" />
             <p>+(506) 88850715</p>

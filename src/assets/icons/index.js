@@ -10,6 +10,9 @@ import Muni from './Muni.png'
 import email from './email.svg'
 import phone from './phone.svg'
 import location from './location.svg'
+import language from './language.svg'
+import arrowLeft from './arrow-left-solid.svg'
+import arrowRight from './arrowRight.svg'
 
 export {
   Bricks,
@@ -22,6 +25,10 @@ export {
 
   email,
   location,
-  phone
+  phone,
+  language,
+
+  arrowLeft,
+  arrowRight
 
 }

@@ -2,6 +2,7 @@
 
 .navbar_mainContainer {
   background-color: #DED9D9;
+  width: 100vw;
   margin: 0;
   padding: 0;
   color: black;
@@ -12,12 +13,56 @@
 }
 
 .navbar_menuOptions {
-
   display: flex;
   flex-direction: row;
-  gap: 1.2rem;
+  gap: 0.5rem;
   justify-content: space-around;
   align-items: center;
+}
+
+.navbar_menuOptions img {
+  height: 4%;
+  width: 35px;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.svg {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+  border: solid red 1px;
+  transition: transform 0.5s;
+  /* Add transition for smooth animation */
+}
+
+.svg:hover {
+  animation: bounce 0.5s 1;
+  /* Apply bounce animation */
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+    /* Initial and final position */
+  }
+
+  50% {
+    transform: translateY(-10px);
+    /* Bounce up */
+  }
+}
+
+
+.svg span {
+  padding-left: 0;
+  margin-left: 0.2rem;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .navbar_logo {
@@ -28,6 +73,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  border: solid blue 1px;
 }
 
 .navbar_logo h2 {

@@ -1,0 +1,30 @@
+.footer_mainContainer {
+  width: 100vw;
+  height: 120px;
+  background-color: #DED9D9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.footer_logo {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.footer_logo h2 {
+  display: flex;
+  flex-direction: row;
+  color: #0838B4;
+  font-family: "Work Sans";
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: normal;
+}

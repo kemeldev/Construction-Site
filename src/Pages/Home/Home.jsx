@@ -22,7 +22,7 @@ export function Home () {
         <AboutMe/>
       </section>
 
-      <section>
+      <section style={{display:"flex",justifyContent:"center"}}>
         <Projects />
       </section>
 
