@@ -15,6 +15,32 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  --sb-track-color: #8c8989;
+  --sb-thumb-color: #0838b4;
+  --sb-size: 14px;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 9px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 9px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -28,7 +54,7 @@ a:hover {
 body {
   margin: 0;
   padding: 0;
-
+  overflow-x: hidden;
 }
 
 h1 {

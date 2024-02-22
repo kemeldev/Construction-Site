@@ -1,4 +1,4 @@
-import kevinImage from './KevinImageremovebg.png'
+import kevinImage from './kemelImage.png'
 import heroImg from './HeroImg.png'
 
 

@@ -1,0 +1,53 @@
+.experience_mainContainer {
+  width: 100vw;
+  /* height: 400px; */
+  background-color: #052342;
+}
+
+.experience_mainContainer aside {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 20px;
+  padding-bottom: 2rem;
+}
+
+.experience_verticalLine {
+  height: 80px;
+  width: 3px;
+  background-color: #FFB400;
+}
+
+.experience_firstSection {
+  margin: 50px;
+  padding-top: 30px;
+}
+
+.experience_firstSection h2 {
+  margin-left: 30px;
+}
+
+
+.experience_title {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  text-align: center;
+  height: 80px;
+}
+
+.experience_title span {
+  font-size: 18px;
+  margin-left: 18px;
+}
+
+
+
+.experience_horizontalLine {
+  height: 3px;
+  width: 50px;
+  background-color: #FFB400;
+}

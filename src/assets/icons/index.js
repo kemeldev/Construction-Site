@@ -6,6 +6,11 @@ import Logo from './Logo.png'
 import Ruler from './ruler.png'
 import Muni from './Muni.png'
 
+
+import email from './email.svg'
+import phone from './phone.svg'
+import location from './location.svg'
+
 export {
   Bricks,
   Avaluos,
@@ -14,4 +19,9 @@ export {
   Logo,
   Muni,
   Ruler,
+
+  email,
+  location,
+  phone
+
 }
