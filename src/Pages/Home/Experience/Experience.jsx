@@ -1,6 +1,11 @@
+import { experienceTranslation } from '../../../constants/translations/translations';
+import { useLanguageStore } from '../../../store/store';
 import './Experience.css'
 
 export function Experience () {
+  const { currentLanguage} = useLanguageStore();
+  const experience = currentLanguage === 'english' ? experienceTranslation.english : experienceTranslation.spanish;
+
   return (
     <>
       <section className="experience_mainContainer">
@@ -8,7 +13,7 @@ export function Experience () {
       <div className='experience_firstSection'>
         <div className='experience_title'>
           <div className='experience_verticalLine'/>
-          <h2>Amplia experiencia en</h2>
+          <h2>{experience.title}</h2>
         </div>
       </div>
 
@@ -16,34 +21,34 @@ export function Experience () {
         <div>
           <div className='experience_title'>
             <div className='experience_horizontalLine'/>          
-            <span>Vivienda Unifamiliar y multifamiliar</span>
+            <span>{experience.line1}</span>
           </div>
 
           <div className='experience_title'>
             <div className='experience_horizontalLine'/>          
-            <span>Proyectos de infraestructura</span>
+            <span>{experience.line2}</span>
           </div>
 
           <div className='experience_title'>
             <div className='experience_horizontalLine'/>           
-            <span>Proyectos Industriales</span>
+            <span>{experience.line2}</span>
           </div>
         </div>
 
         <div>
           <div className='experience_title'>
             <div className='experience_horizontalLine'/>          
-            <span>Proyectos residenciales</span>
+            <span>{experience.line4}</span>
           </div>
 
           <div className='experience_title'>
             <div className='experience_horizontalLine'/>          
-            <span>Diseño y dibujo</span>
+            <span>{experience.line5}</span>
           </div>
 
           <div className='experience_title'>
             <div className='experience_horizontalLine'/>           
-            <span>Obra pública educacional</span>
+            <span>{experience.line6}</span>
           </div>
         </div>
 

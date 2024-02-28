@@ -1,5 +1,8 @@
 .experience_mainContainer {
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
   /* height: 400px; */
   background-color: #052342;
 }
@@ -12,10 +15,12 @@
   gap: 3rem;
   margin-top: 20px;
   padding-bottom: 2rem;
+  transform: translateY(-50px);
+
 }
 
 .experience_verticalLine {
-  height: 80px;
+  height: 60px;
   width: 3px;
   background-color: #FFB400;
 }
@@ -28,7 +33,6 @@
 .experience_firstSection h2 {
   margin-left: 30px;
 }
-
 
 .experience_title {
   display: flex;
@@ -50,4 +54,22 @@
   height: 3px;
   width: 50px;
   background-color: #FFB400;
+}
+
+@media screen and (max-width: 800px) {
+  .experience_horizontalLine {
+    width: 25px;
+  }
+
+  .experience_title {
+    text-align: left;
+    padding: 0px 20px 0 20px;
+  }
+
+  .experience_mainContainer aside {
+    width: 100%;
+    gap: 1rem;
+    margin-top: 20px;
+    padding-bottom: 2rem;
+  }
 }

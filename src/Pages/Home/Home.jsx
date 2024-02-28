@@ -5,36 +5,37 @@ import AboutMe from "./AboutMe/AboutMe"
 import Footer from "./Footer/Footer"
 import Hero from "./Hero/Hero"
 import Projects from "./Projects/Projects"
+import ContactTest from "./Contact/ContactTest"
 
 export function Home () {
 
   return (
     <main>
-      <section>
+      <section id="home">
         <Navbar />
       </section>
 
-      <section>
+      <section id="hero">
         <Hero />
       </section>
 
-      <section>
+      <section id="about">
         <AboutMe/>
       </section>
 
-      <section style={{display:"flex",justifyContent:"center"}}>
+      <section id="projects" style={{display:"flex",justifyContent:"center"}}>
         <Projects />
       </section>
 
-      <section>
+      <section id="experience">
         <Experience />
       </section>
 
-      <section>
+      <section id="contact">
         <Contact />
       </section>
 
-      <section>
+      <section id="footer">
         <Footer />
       </section>
 

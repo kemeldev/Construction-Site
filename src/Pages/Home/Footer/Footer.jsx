@@ -1,7 +1,11 @@
 import { Logo } from '../../../assets/icons'
+import { navbarOptions } from '../../../constants/translations/translations';
+import { useLanguageStore } from '../../../store/store';
 import './Footer.css'
 
 export function Footer () {
+  const { currentLanguage} = useLanguageStore();
+  const footerTitle = currentLanguage === 'english' ? navbarOptions.english : navbarOptions.spanish;
   return (
     <>
     <footer className="footer_mainContainer">
@@ -14,7 +18,7 @@ export function Footer () {
               height={50}
             />
           </div>
-          <h2>Ing Kevin Bolaños</h2>
+          <h2>{footerTitle.title}</h2>
         </div>
         
       </footer>

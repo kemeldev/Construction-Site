@@ -1,6 +1,42 @@
 .carousel_mainContainer {
   width: 100%;
   height: 100%;
+  position: relative;
+}
+
+.carousel_mainSlider {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+
+}
+
+.carousel_mainSlider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 9));
+  z-index: 0;
+
+}
+
+.carousel_textContent {
+  z-index: 1;
+  position: absolute;
+  padding: 0rem 5rem 3rem 5rem;
+  width: 100%;
+  bottom: 0;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.carousel_textContent>* {
+  margin: 0;
+  padding: 0;
 }
 
 .carousel_image_slider {
@@ -8,4 +44,69 @@
   width: 100%;
   height: 100%;
   display: block;
+  flex-shrink: 0;
+  flex-grow: 0;
+  transition: translate 0.3s ease-in-out;
+}
+
+.carousel_btn {
+  all: unset;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 1rem;
+  cursor: pointer;
+  stroke: white;
+  fill: black;
+  transition: background-color .3 ease-in-out;
+  filter: drop-shadow(2px 4px 2px rgba(0, 0, 0, 0.9));
+  z-index: 2;
+}
+
+.carousel_btn:hover>* {
+  animation: squish 0.2s ease-in-out;
+}
+
+.carousel_btn:hover {
+  background-color: rgb(0, 0, 0, 0.2);
+}
+
+.carousel_btn:active img {
+  scale: 0.7;
+}
+
+@keyframes squish {
+  50% {
+    scale: 1.6 0.6;
+  }
+}
+
+.carousel_bottomBtns {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  translate: -50%;
+  display: flex;
+  gap: 0.25rem;
+  z-index: 2;
+}
+
+.carousel_bottomsBtns_dot {
+  all: unset;
+  display: block;
+  cursor: pointer;
+  transition: background-color .3 ease-in-out;
+  filter: drop-shadow(0 3px 3px rgba(192, 194, 199, 0.9));
+
+}
+
+.carousel_bottomsBtns_dot>* {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.carousel_bottomsBtns_dot:hover {
+  background-color: transparent;
+  scale: 1.5;
 }

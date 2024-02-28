@@ -8,39 +8,77 @@
   color: black;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding: 0 5rem;
   align-items: center;
 }
 
 .navbar_menuOptions {
+  position: relative;
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
   justify-content: space-around;
   align-items: center;
+  cursor: pointer;
 }
+
+.navbar_menuOptions h4 {
+  position: relative;
+}
+
+.navbar_menuOptions h4::after {
+  content: "";
+  width: 0px;
+  height: 2px;
+  transform-origin: center;
+  position: absolute;
+  bottom: 0%;
+  left: 20%;
+  background-color: #0838B4;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar_menuOptions h4:hover::after {
+  width: 60%;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+
+}
+
 
 .navbar_menuOptions img {
   height: 4%;
   width: 35px;
   padding-right: 0;
   margin-right: 0;
+  cursor: pointer;
 }
 
-.svg {
+.navbar_menuOptions a {
+  text-decoration: none;
+  color: inherit;
+
+}
+
+.navbar_menuOptions a:hover {
+  color: #0838B4
+}
+
+.svgLanguage {
   display: flex;
   align-items: center;
   text-align: center;
   justify-content: center;
   cursor: pointer;
-  border: solid red 1px;
   transition: transform 0.5s;
   /* Add transition for smooth animation */
 }
 
-.svg:hover {
+.svgLanguage:hover {
   animation: bounce 0.5s 1;
-  /* Apply bounce animation */
+  color: #0838B4;
 }
 
 @keyframes bounce {
@@ -58,7 +96,7 @@
 }
 
 
-.svg span {
+.svgLanguage span {
   padding-left: 0;
   margin-left: 0.2rem;
   font-weight: bold;
@@ -73,7 +111,6 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: solid blue 1px;
 }
 
 .navbar_logo h2 {
@@ -85,4 +122,53 @@
   font-style: italic;
   font-weight: 700;
   line-height: normal;
+}
+
+.svgMenu {
+  display: none;
+  position: absolute;
+  right: 3rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .navbar_menuOptions {
+    display: none;
+  }
+
+  .svgMenu {
+    display: block;
+  }
+
+  .navbar_mainContainer {
+    justify-content: left;
+  }
+
+  .navbar_logo {
+    position: relative;
+    left: 2rem;
+  }
+}
+
+.navbar_modal {
+  position: absolute;
+  width: 40%;
+  height: 500px;
+  top: 68px;
+  right: -5%;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+.navbar_modal>* {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.navbar_modal>*:hover {
+  color: #0838B4;
 }

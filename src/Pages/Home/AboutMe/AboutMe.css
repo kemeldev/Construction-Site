@@ -22,11 +22,11 @@
 
 .about_aboutme {
   margin-top: 100px;
-  height: 350px;
-  width: 300px;
+  height: 400px;
+  width: 400px;
   background-color: #0838b4;
   position: absolute;
-  right: -25%;
+  right: -35%;
   bottom: 50%;
   transform: translateY(50%);
 }
@@ -35,4 +35,40 @@
 h4,
 button {
   padding: 0 1.2rem;
+}
+
+@media screen and (max-width: 800px) {
+  .about_mainContainer {
+    height: 700px;
+  }
+
+  .about_image {
+    margin-top: 100px;
+    height: 500px;
+    width: 500px;
+    background-color: #9a9a9a;
+    position: absolute;
+    left: 40%;
+    transform: translateX(-50%);
+  }
+
+  .about_image img {
+    left: 30%;
+    bottom: -10%;
+    transform: scale(0.8) translate(-50%);
+  }
+
+  .about_aboutme {
+    height: 350px;
+    width: 250px;
+    right: -15%;
+  }
+
+  .about_aboutme h2,
+  h4,
+  button {
+    padding: 0 1rem;
+    font-size: 14px;
+  }
+
 }

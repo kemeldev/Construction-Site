@@ -1,27 +1,46 @@
 import './Contact.css'
 import {phone, location, email} from '../../../assets/icons'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useLanguageStore } from '../../../store/store';
+import { useForm } from '@formspree/react';
+import { contactAndFormTranslation } from '../../../constants/translations/translations';
 
 export function Contact () {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    message: ''
-  });
+  const { currentLanguage} = useLanguageStore();
+  const translations = 
+    currentLanguage === 'english'
+    ? contactAndFormTranslation.english
+    : contactAndFormTranslation.spanish;
 
+  
+  const [showButton, setShowButton] = useState(true);
+
+  const [formData, setFormData] = useState({
+      name: '',
+      phone: '',
+      email: '',
+      message: ''
+    });
+  
   const [errors, setErrors] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    message: ''
-  });
+      name: '',
+      phone: '',
+      email: '',
+      message: ''
+    });
+
+  const [formSpreeState, handleSubmit] = useForm("xgegynga");
+  useEffect(() => {
+    if (formSpreeState.succeeded) {
+      setShowButton(false);
+    }
+  }, [formSpreeState]);
 
   const validateName = () => {
-    if (!/^[a-zA-Z]{3,}$/.test(formData.name)) {
+    if (!/^[a-zA-Z]{3}.*$/.test(formData.name)) {
       setErrors((prevErrors) => ({
         ...prevErrors,
-        name: 'Name must contain at least 3 letters'
+        name: translations.nameError
       }));
     } else {
       setErrors((prevErrors) => ({
@@ -35,7 +54,7 @@ export function Contact () {
     if (formData.phone.replace(/\D/g, '').length < 8) {
       setErrors((prevErrors) => ({
         ...prevErrors,
-        phone: 'Phone number must contain at least 8 numbers'
+        phone: translations.phoneError
       }));
     } else {
       setErrors((prevErrors) => ({
@@ -50,7 +69,7 @@ export function Contact () {
     if (!emailRegex.test(formData.email)) {
       setErrors((prevErrors) => ({
         ...prevErrors,
-        email: 'Invalid email address'
+        email: translations.emailError
       }));
     } else {
       setErrors((prevErrors) => ({
@@ -69,25 +88,25 @@ export function Contact () {
   };
 
   // TODO: send data to backend or handle it somehow
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
 
-    const hasErrors = Object.values(errors).some((error) => error !== '');
+  //   const hasErrors = Object.values(errors).some((error) => error !== '');
 
-    if (hasErrors) {
-      console.log('Form has errors, cannot submit.');
-      return;
-    }
+  //   if (hasErrors) {
+  //     console.log('Form has errors, cannot submit.');
+  //     return;
+  //   }
     
-    console.log(formData);
-  }
+  //   console.log(formData);
+  // }
   return (
     <>
       <section className='contact_mainContainer'>
 
         <div className='contact_information'>
-          <h3>Información de contacto</h3>
-          <h5>¿ Cómo puedo ayudar ?</h5>
+          <h3>{translations.title}</h3>
+          <h5>{translations.help}</h5>
           <div className='contact_information_data'>
             <img src={phone} alt="phone icon" />
             <p>+(506) 88850715</p>
@@ -108,12 +127,12 @@ export function Contact () {
         <fieldset>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">{translations.name}</label>
               <input
                 type="text"
                 id="name"
                 name="name"
-                placeholder="Enter your name"
+                placeholder={translations.namePlaceholder}
                 value={formData.name}
                 onChange={handleChange}
                 onBlur={validateName}
@@ -122,12 +141,12 @@ export function Contact () {
               {errors.name && <span className="formError">{errors.name}</span>}
             </div>
             <div className="form-group">
-              <label htmlFor="phone">Phone</label>
+              <label htmlFor="phone">{translations.phone}</label>
               <input
                 type="tel"
                 id="phone"
                 name="phone"
-                placeholder="Enter your phone number"
+                placeholder={translations.phonePlaceholder}
                 value={formData.phone}
                 onChange={handleChange}
                 onBlur={validatePhone}
@@ -141,7 +160,7 @@ export function Contact () {
                 type="email"
                 id="email"
                 name="email"
-                placeholder="Enter your email"
+                placeholder={translations.emailPlaceholder}
                 value={formData.email}
                 onChange={handleChange}
                 onBlur={validateEmail}
@@ -150,7 +169,7 @@ export function Contact () {
               {errors.email && <span className="formError">{errors.email}</span>}
             </div>
             <div className="form-group">
-              <label htmlFor="message">Message</label>
+              <label htmlFor="message">{translations.message}</label>
               <textarea
                 id="message"
                 name="message"
@@ -160,7 +179,13 @@ export function Contact () {
                 required
               ></textarea>
             </div>
-            <button type="submit">Submit</button>
+            {showButton 
+              ? 
+                <button type="submit" disabled={formSpreeState.submitting}>
+                  {translations.submit}
+                </button>
+              : <h4 style={{color: "#0838B4"}}>{translations.submitted}</h4>
+              }
           </form>
         </fieldset>
         </div>

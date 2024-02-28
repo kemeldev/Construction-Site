@@ -11,12 +11,12 @@
 }
 
 .hero_presentation_firstSection {
-  margin-left: 5%;
+  margin-left: 8%;
   margin-top: 8%;
 }
 
 .hero_presentation_firstSection p {
-  font-size: large;
+  font-size: 24px;
   margin-bottom: 4rem;
   margin-top: 2rem;
 }
@@ -30,6 +30,8 @@
   font-weight: bold;
   border-color: transparent;
   background-color: #FFB400;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.8);
+  cursor: pointer;
 }
 
 .hero_presentation_verticalLine {
@@ -58,7 +60,7 @@
 }
 
 .hero_presentation_description {
-  margin-left: 5%;
+  margin-left: 8%;
   margin-top: 5%;
 }
 
@@ -74,11 +76,16 @@
 
 }
 
+.hero_services h2 {
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
 .hero_services_all {
   display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
+  height: 2000px;
   padding: 1.5rem 0 1.5rem 0;
 
 }
@@ -88,15 +95,12 @@
   flex-direction: row;
   width: 80%;
   max-width: 100%;
-  height: auto;
+  height: 40px;
   gap: 25px;
-  height: 60px;
   padding-left: 20px;
   margin-right: 30px;
   align-items: center;
   justify-content: space-evenly;
-
-
 }
 
 .hero_services_each img {
@@ -108,13 +112,53 @@
   flex: 1;
   word-wrap: break-word;
   position: absolute;
-  left: 150px;
+  left: 125px;
   height: auto;
   width: 60%;
+
+}
+
+.hero_services_each small p {
+  font-size: 16px;
+}
+
+@media screen and (min-width: 800px) and (max-width: 1100px) {
+  .hero_services_each img {
+    left: 20px;
+    height: 40px;
+    width: 40px;
+  }
+
+  .hero_services_each small {
+    left: 75px;
+    width: 75%;
+  }
+
+  .hero_services h2 {
+    margin-left: 50px;
+  }
 
 }
 
 .hero_services_each h3,
 p {
   margin: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .hero_mainContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero_presentation {
+    width: 100%;
+    height: 800px;
+  }
+
+  .hero_services {
+    width: 100%;
+    padding-top: 50px;
+  }
+
 }

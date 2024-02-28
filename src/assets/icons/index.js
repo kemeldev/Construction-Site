@@ -11,10 +11,16 @@ import email from './email.svg'
 import phone from './phone.svg'
 import location from './location.svg'
 import language from './language.svg'
-import arrowLeft from './arrow-left-solid.svg'
+import arrowLeft from './arrowLeft.svg'
 import arrowRight from './arrowRight.svg'
+import bluedot from './bluedot.svg'
+import whitedot from './whitedot.svg'
+import hamburgerMenu from './hamburgerMenu.svg'
 
 export {
+
+  hamburgerMenu,
+
   Bricks,
   Avaluos,
   Crane,
@@ -29,6 +35,9 @@ export {
   language,
 
   arrowLeft,
-  arrowRight
+  arrowRight,
+
+  bluedot,
+  whitedot
 
 }

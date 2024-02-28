@@ -1,11 +1,15 @@
 import { useState } from "react"
-import { arrowLeft, arrowRight } from "../assets/icons"
+import { arrowLeft, arrowRight, bluedot, whitedot } from "../assets/icons"
 import './carousel.css'
 import PropTypes from 'prop-types'
+import { useLanguageStore } from "../store/store"
+import { projectsTranslations } from "../constants/translations/translations"
 
 
 export function Carousel ({images}) {
-  const [imageIndex, setImageIndex] = useState(0)
+  const [imageIndex, setImageIndex] = useState(3)
+  const { currentLanguage} = useLanguageStore();
+  const projects = currentLanguage === 'english' ? projectsTranslations.english : projectsTranslations.spanish;
 
   const showNextImage = () => {
     setImageIndex(index => {
@@ -24,9 +28,27 @@ export function Carousel ({images}) {
   return (
     <>
       <div className="carousel_mainContainer">
-        <img src={images[imageIndex]} 
+
+        <div className="carousel_mainSlider">
+          {images.map((image,index) => (
+            <img  
+              key={index}
+              src={image} 
               className="carousel_image_slider"
-              alt="carousel of project images" />
+              style={{translate: `${-100 * imageIndex}%`}}
+              alt="carousel of project images" 
+            />
+          ))}
+          <div className="carousel_textContent">
+            <h2>{projects[imageIndex].title}</h2>
+            <h4>{projects[imageIndex].description}</h4>
+            <h4>{projects[imageIndex].location}</h4>
+          </div>
+        </div>
+
+        {/* <img src={images[imageIndex]} 
+              className="carousel_image_slider"
+              alt="carousel of project images" /> */}
         <button 
           onClick={showPreviousImage}
           className="carousel_btn" 
@@ -42,6 +64,21 @@ export function Carousel ({images}) {
           <img src={arrowRight} 
               alt="right arrow to move slider" />
         </button>
+
+        <div className="carousel_bottomBtns">
+          {images.map((_, index) =>(
+              <button 
+                className="carousel_bottomsBtns_dot"
+                key={index}
+                onClick={() => setImageIndex(index)}>
+              {index === imageIndex ? <img src={bluedot} 
+               /> :  <img src={whitedot} 
+               /> }
+              </button>
+          ))}
+        </div>
+
+
       </div>
     </>
   )
