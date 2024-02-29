@@ -131,25 +131,6 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 800px) {
-  .navbar_menuOptions {
-    display: none;
-  }
-
-  .svgMenu {
-    display: block;
-  }
-
-  .navbar_mainContainer {
-    justify-content: left;
-  }
-
-  .navbar_logo {
-    position: relative;
-    left: 2rem;
-  }
-}
-
 .navbar_modal {
   position: absolute;
   width: 40%;
@@ -163,10 +144,84 @@
   z-index: 1;
 }
 
+
+@media only screen and (min-width: 800px) and (max-width: 1000px) {
+  .navbar_mainContainer {
+    padding: 0 2rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .navbar_menuOptions {
+    display: none;
+  }
+
+  .svgMenu {
+    display: block;
+  }
+
+  .navbar_mainContainer {
+    padding: 0 1rem;
+  }
+
+  .navbar_logo {
+    position: relative;
+    left: 2rem;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .navbar_mainContainer {
+    padding: 0 1rem;
+  }
+
+  .navbar_logo {
+    left: 0.5rem;
+  }
+
+  .navbar_logo img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .navbar_logo h2 {
+    font-size: 16px;
+  }
+
+  .svgMenu {
+    right: 1rem;
+  }
+
+  .svgMenu img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .navbar_modal {
+    width: 60%;
+    height: 350px;
+    top: 47px;
+  }
+
+}
+
+
 .navbar_modal>* {
   text-decoration: none;
   color: black;
   cursor: pointer;
+}
+
+.svgLanguageMenu {
+  display: flex;
+  align-items: center;
+  transform: translateY(-35%) translateX(5%);
+
+}
+
+.navbar_modal img {
+  width: 35px;
+  height: 35px;
 }
 
 .navbar_modal>*:hover {

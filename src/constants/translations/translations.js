@@ -16,7 +16,8 @@ export const navbarOptions = {
     about: "Sobre mí",
     projects: "Proyectos",
     contact: "Contacto",
-    language: "ES"
+    language: "ES",
+    services: "Servicios"
   }
 };
 

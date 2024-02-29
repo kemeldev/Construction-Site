@@ -12,3 +12,10 @@
     width: 85%;
   }
 }
+
+@media screen and (max-width: 440px) {
+  .projects_mainContainer {
+    margin-top: 0px;
+    width: 100%;
+  }
+}

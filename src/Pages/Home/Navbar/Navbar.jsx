@@ -65,14 +65,14 @@ export function Navbar () {
 
         {menuOpen && (
         <div className='navbar_modal' ref={menuRef}>
-          <h4><a onClick={() => { scrollToSection('home')}}>Home</a></h4>
-          <h4><a onClick={() => { scrollToSection('services') }}>Servicios</a></h4>
-          <h4><a onClick={() => { scrollToSection('about');  }}>Sobre mí</a></h4>
-          <h4><a onClick={() => { scrollToSection('projects');  }}>Proyectos</a></h4>
-          <h4><a onClick={() => { scrollToSection('contact');  }}>Contacto</a></h4>
-          <div className='svgLanguage' onClick={handleLanguageChange}>
+          <h4><a onClick={() => { scrollToSection('home')}}>{menuOptions.home}</a></h4>
+          <h4><a onClick={() => { scrollToSection('services') }}>{menuOptions.services}</a></h4>
+          <h4><a onClick={() => { scrollToSection('about');  }}>{menuOptions.about}</a></h4>
+          <h4><a onClick={() => { scrollToSection('projects');  }}>{menuOptions.projects}</a></h4>
+          <h4><a onClick={() => { scrollToSection('contact');  }}>{menuOptions.contact}</a></h4>
+          <div className='svgLanguageMenu' onClick={handleLanguageChange}>
           <img src={language} alt="language icon" />
-          <span>{menuOptions.language}</span>
+          <h4>{menuOptions.language}</h4>
           </div>
         </div>
       )}

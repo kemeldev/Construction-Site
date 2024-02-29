@@ -5,7 +5,6 @@ import AboutMe from "./AboutMe/AboutMe"
 import Footer from "./Footer/Footer"
 import Hero from "./Hero/Hero"
 import Projects from "./Projects/Projects"
-import ContactTest from "./Contact/ContactTest"
 
 export function Home () {
 
